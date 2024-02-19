@@ -1,0 +1,11 @@
+/* styles.css */
+
+/* Apply Segoe UI to the entire document */
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Apply Segoe UI to specific elements (e.g., headers) */
+h1, h2, h3 {
+    font-family: 'Segoe UI', sans-serif;
+}
