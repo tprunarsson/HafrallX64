@@ -4,4 +4,4 @@ Here you will find the Win64 program Hafrall (2024). It does not need any other 
 
 The data file included is for the 2023 Spring Survey.
 
-![see screenshot](screenshot.png)
+![see screenshot](images/screenshot.png)
