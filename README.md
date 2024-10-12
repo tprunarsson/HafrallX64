@@ -1,7 +1,20 @@
 # HafrallX64
 
-Here you will find the Win64 program Hafrall (2024). It does not need any other files, it is standalone. You may have some complaints about it might be dangerous (because its an .EXE file), but trust me its safe to run :)
+### Downloading the Hafrall Program
 
-The data file included is for the 2023 Spring Survey.
+You can download the Win64 version of the program, `Hafrall`, directly from the GitHub repository:
+
+- **Location**: [bin/Hafrall3.exe](https://github.com/your-repository-link/bin/Hafrall3.exe) *(replace with actual link)*
+
+The program is fully standalone and does not require any additional files to run.
+
+**Important**: Some browsers or antivirus software may flag `.exe` files as potentially unsafe for download. This is a common precaution due to the nature of executable files. However, rest assured that `Hafrall3.exe` is safe to use.
+
+To proceed with the download:
+- You may need to allow the download manually if your browser blocks it.
+- After downloading, simply run the `.exe` file to start using the program.
+
+
+The data/ includes the 2023 Spring Survey.
 
 ![see screenshot](images/screenshot.png)
