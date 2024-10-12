@@ -6,6 +6,11 @@ You can download the Win64 version of the program, `Hafrall`, directly from the 
 
 - **Location**: [bin/Hafrall3.exe](https://github.com/tprunarsson/HafrallX64/blob/main/bin/Hafrall3.exe) *(replace with actual link)*
 
+**To download the file:**
+1. Navigate to the `bin/` directory in the repository.
+2. Click on the file `Hafrall3.exe`.
+3. On the right-hand side (RHS), click the **Download Raw** button to download the file directly.
+
 The program is fully standalone and does not require any additional files to run.
 
 **Important**: Some browsers or antivirus software may flag `.exe` files as potentially unsafe for download. This is a common precaution due to the nature of executable files. However, rest assured that `Hafrall3.exe` is safe to use.
