@@ -4,7 +4,7 @@
 
 You can download the Win64 version of the program, `Hafrall`, directly from the GitHub repository:
 
-- **Location**: [bin/Hafrall3.exe](https://github.com/tprunarsson/HafrallX64/blob/main/bin/Hafrall3.exe) *(replace with actual link)*
+- **Location**: [bin/Hafrall3.exe](https://github.com/tprunarsson/HafrallX64/blob/main/bin/Hafrall3.exe)
 
 **To download the file:**
 1. Navigate to the `bin/` directory in the repository.
