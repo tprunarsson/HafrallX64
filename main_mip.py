@@ -195,7 +195,7 @@ def runit(file, ship_id, name, run, mode, ShipCap, TimeWindow = None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Groundfish Survey Planner")
     parser.add_argument(
-        "--file", type=str, default="../../data/data2023spring.dat",
+        "--file", type=str, default="data/data2023spring.dat",
         help="Path to the data file (default: %(default)s)"
     )
     parser.add_argument(
