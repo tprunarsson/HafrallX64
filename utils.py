@@ -23,7 +23,7 @@ if platform.system() == "Windows":
     lib = ctypes.WinDLL("lib/utils.dll")
 else:
     # Load the .so file on Linux/macOS
-    lib = ctypes.CDLL('./lib/utils.so')
+    lib = ctypes.CDLL('lib/utils.so')
 
 def arcdist(lat1, lon1, lat2, lon2):
     r = 3437.905   # Earth radius in miles
