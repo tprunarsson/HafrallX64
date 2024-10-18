@@ -21,8 +21,11 @@ if platform.system() == "Windows":
     os.add_dll_directory(script_dir)
     # Load the DLL
     lib = ctypes.WinDLL("lib/utils.dll")
+elif platform.system() == "Darwin":  # For macOS
+    # Load the .dylib file on macOS
+    lib = ctypes.CDLL('lib/utils.dylib')
 else:
-    # Load the .so file on Linux/macOS
+    # Load the .so file on Linux
     lib = ctypes.CDLL('lib/utils.so')
 
 def arcdist(lat1, lon1, lat2, lon2):
