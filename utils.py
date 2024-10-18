@@ -96,8 +96,10 @@ def Dijkstra_(graph, src, dest):
     
     # now extract the distance and path
     p__ = np.ctypeslib.as_array(path_, shape = (n))
+    print("p__ = ", p__)
     d = np.ctypeslib.as_array(d_, shape=(1))
     path = p__[:np.where(p__<0)[0][0]]
+    print("path__ = ", path)
     return (d.item(),path)
 
 def drawTour(tour, LatLonRad, Type, Amount, DistMtrx, FsbleMtrx):
@@ -131,35 +133,38 @@ def drawTour(tour, LatLonRad, Type, Amount, DistMtrx, FsbleMtrx):
             (x_,y_) = deg2point([pi180*LatLonRad[i,0]],[-pi180*LatLonRad[i,1]],1000)
             # the marker should be a green square
             ax.plot(x_,y_,marker = "^", color = "g")
+            ax.text(x_[0],y_[0],str(i),fontsize=8)
     for i in tour[1:]: # the first two point will be (n-2,n-1) (start and end, we are painting backwards)
         # investigate if we need to reroute
         if FsbleMtrx[2*ilast+(jlast==2),2*np.abs(i)+(i<0)] == 0:
-            print("connection", 2*ilast+(jlast==2),2*np.abs(i)+(i<0), "is not possible", (ilast,i))
+            print("connection", 2*ilast+(jlast==2),2*np.abs(i)+(i<0), "crosses land", (ilast,i))
             idx = [2*ilast+(jlast==2),2*np.abs(i)+(i<0)]
             idx.extend(2*np.where(Type == tWAYP)[0])
-            idx.extend(1+2*np.where(Type == tWAYP)[0])
-            D = DistMtrx[np.ix_(idx, idx)]
-            (d,path) = Dijkstra_(D, 0+jlast, 2+(i<0))
-            # need to check if path is feasible!!! if not then just cross the land!
-            ilast_ = ilast
-            jlast_ = jlast
+            #idx.extend(1+2*np.where(Type == tWAYP)[0])
+            D = DistMtrx[np.ix_(idx, idx)]*FsbleMtrx[np.ix_(idx, idx)]+(1-FsbleMtrx[np.ix_(idx, idx)])*1e6
+            (d,path) = Dijkstra_(D, 0, 1)
+            # reverse the path
+            path = path[1:-1][::-1]
+            #print(path,[idx[it]/2 for it in path])
+            colrs = colors[c_tour]
+            lstyle = 'dotted'
             for i_ in [int(idx[it]/2) for it in path]:
-                if FsbleMtrx[2*ilast_+(jlast_==2),2*np.abs(i_)] == 0:
-                    path = []
-                    break
-                jlast_= 0
-                ilast_  = i_
-            print(len(idx),path,[idx[it] for it in path])
-            for i_ in [int(idx[it]/2) for it in path]:
-                print("plotting: ", ilast, i_)
+                #print("plotting: ", ilast, i_)
                 (x1,y1) = deg2point([pi180*LatLonRad[ilast,jlast]],[-pi180*LatLonRad[ilast,jlast+1]],1000)
                 (x2,y2) = deg2point([pi180*LatLonRad[i_,0]],[-pi180*LatLonRad[i_,1]],1000)
                 jlast = 0
                 ilast = i_
-            #t = 2*(-i)+1
-                colrs = 'k'
-                lstyle = 'dotted'
-                ax.plot([x1[0],x2[0]],[y1[0],y2[0]],color=colrs,linestyle=lstyle, linewidth=3)
+                ax.plot([x1[0],x2[0]],[y1[0],y2[0]],color=colrs,linestyle=lstyle, linewidth=.6)
+            (x1,y1) = (x2,y2)
+            if (i > 0):
+                (x2,y2) = deg2point([pi180*LatLonRad[i,0]],[-pi180*LatLonRad[i,1]],1000)
+                ilast = i
+                jlast = 2
+            else:
+                (x2,y2) = deg2point([pi180*LatLonRad[-i,2]],[-pi180*LatLonRad[-i,3]],1000)
+                ilast = -i
+                jlast = 0
+            ax.plot([x1[0],x2[0]],[y1[0],y2[0]],color=colrs,linestyle=lstyle, linewidth=.6)
         if i < 0:
             if Type[-i] != tPORT and Type[-i] != tWAYP:
                 amount += Amount[-i]
@@ -178,11 +183,7 @@ def drawTour(tour, LatLonRad, Type, Amount, DistMtrx, FsbleMtrx):
                 # the marker should be a green square
                 ax.plot(xtmp[0],ytmp[0],marker = "s", color = "y") # Draw the end location
                 print("Port", i, "is be ignored")
-            elif Type[-i] == tWAYP:
-                (xtmp,ytmp) = deg2point([pi180*LatLonRad[-i,0]],[-pi180*LatLonRad[-i,1]],1000)
-                # the marker should be a green square
-                ax.plot(xtmp[0],ytmp[0],marker = "*", color = "y") # Draw the end location
-                print("Port", i, "is be ignored")
+                     
             else:
                 ax.arrow(x1[0],y1[0],x2[0]-x1[0],y2[0]-y1[0], head_width=0.7, head_length=0.7, fc='g', ec='g')
         else:
@@ -209,7 +210,7 @@ def drawTour(tour, LatLonRad, Type, Amount, DistMtrx, FsbleMtrx):
                 ax.arrow(x1[0],y1[0],x2[0]-x1[0],y2[0]-y1[0], head_width=0.7, head_length=0.7, fc='g', ec='g')
         
         #ax.arrow(x1[0],y1[0],x2[0]-x1[0],y2[0]-y1[0], head_width=0.7, head_length=0.7, fc='g', ec='g')
-        #ax.text(x1[0],y1[0],str(i),fontsize=12)
+        ax.text(x1[0],y1[0],str(i),fontsize=8)
         #ax.text(x1[0],y1[0],str(amount),fontsize=6)
         #(x1,y1) = (x2,y2)
         #if ((1==isPort[i]) and (i != ilast)):
