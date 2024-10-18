@@ -49,7 +49,7 @@ def subtourelim_(model, where):
 # Given a tuplelist of edges, find the shortest subtour
 n_global = 0
 
-def solveit_(dist, n, Amount, shipCap, Type, timelimit = 3600, useAmount = True, useSubtour = True):
+def solveit_(dist, n, Amount, shipCap, Type, timelimit = 3600, useAmount = False, useSubtour = True):
 
     global n_global
     n_global = 2*n
