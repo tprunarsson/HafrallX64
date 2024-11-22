@@ -1,0 +1,62 @@
+BOAT 663381 224128 663381 224128 14000 10 4 30 255 153 153 "Bjarni Sæmundsson"
+STAT 671 5 0 663615 215451 663716 214462 1643 12  #   \\ botndypi_kastad= 72 botndypi_hift= 88 \\
+STAT 621 3 0 663003 213672 663019 214666 47 14  #  Endurtekið tog, rifnaði í fyrri tilraun \\ botndypi_kastad= 110 botndypi_hift= 103 \\
+STAT 671 11 0 663526 213257 663865 212728 2352 15  #   \\ botndypi_kastad= 107 botndypi_hift= 119 \\
+STAT 671 1 0 663995 212727 664001 211723 1523 15  #   \\ botndypi_kastad= 113 botndypi_hift= 122 \\
+STAT 671 3 0 664409 211326 664753 210828 1005 14  #   \\ botndypi_kastad= 104 botndypi_hift= 104 \\
+STAT 671 4 0 664899 211662 664802 212638 616 13  #   \\ botndypi_kastad= 85 botndypi_hift= 84 \\
+STAT 671 13 0 664487 214189 664696 215040 2251 16  #   \\ botndypi_kastad= 134 botndypi_hift= 140 \\
+STAT 671 14 0 665282 215576 665476 214692 1281 19  #   \\ botndypi_kastad= 172 botndypi_hift= 176 \\
+STAT 671 12 0 665505 213996 665589 213004 2356 19  #   \\ botndypi_kastad= 168 botndypi_hift= 157 \\
+STAT 671 2 0 665310 211026 665382 210029 1876 16  #   \\ botndypi_kastad= 129 botndypi_hift= 139 \\
+STAT 670 11 0 665493 205529 665832 210051 380 20  #   \\ botndypi_kastad= 181 botndypi_hift= 168 \\
+STAT 670 4 0 665890 205323 665896 204308 263 20  #   \\ botndypi_kastad= 167 botndypi_hift= 221 \\
+STAT 720 14 0 670194 203411 670493 202738 109 24  #   \\ botndypi_kastad= 237 botndypi_hift= 232 \\
+STAT 720 3 0 670555 204096 670307 204896 528 22  #   \\ botndypi_kastad= 209 botndypi_hift= 192 \\
+STAT 720 2 0 670735 205313 671016 204579 230 23  #   \\ botndypi_kastad= 217 botndypi_hift= 240 \\
+STAT 720 1 0 671459 204077 671793 204640 305 27  #   \\ botndypi_kastad= 266 botndypi_hift= 296 \\
+STAT 720 11 0 671824 204178 672004 203262 136 32  #   \\ botndypi_kastad= 329 botndypi_hift= 352 \\
+STAT 720 13 0 670918 202778 671006 201786 254 24  #   \\ botndypi_kastad= 234 botndypi_hift= 250 \\
+STAT 719 1 0 671567 194988 671897 194408 149 29  #   \\ botndypi_kastad= 282 botndypi_hift= 347 \\
+STAT 719 11 0 670710 193187 670982 192445 64 36  #  Drulla í poka \\ botndypi_kastad= 368 botndypi_hift= 451 \\
+STAT 719 2 0 670889 194927 670597 195602 67 29  #   \\ botndypi_kastad= 300 botndypi_hift= 287 \\
+STAT 720 12 0 670465 200966 670189 201701 52 28  #   \\ botndypi_kastad= 281 botndypi_hift= 275 \\
+STAT 670 5 0 665783 202234 665573 203097 96 27  #   \\ botndypi_kastad= 266 botndypi_hift= 278 \\
+STAT 670 3 0 665074 204067 664804 204808 76 28  #   \\ botndypi_kastad= 295 botndypi_hift= 281 \\
+STAT 671 15 0 664295 205979 663986 210603 502 23  #   \\ botndypi_kastad= 224 botndypi_hift= 197 \\
+STAT 670 12 0 663515 202618 663693 201721 1409 26  #   \\ botndypi_kastad= 285 botndypi_hift= 200 \\
+STAT 670 1 0 663383 201347 663639 200579 250 13  #   \\ botndypi_kastad= 83 botndypi_hift= 110 \\
+STAT 670 14 0 664001 201759 664203 200894 960 27  #   \\ botndypi_kastad= 282 botndypi_hift= 238 \\
+STAT 670 2 0 663874 200019 664271 200026 1493 16  #   \\ botndypi_kastad= 124 botndypi_hift= 152 \\
+STAT 669 13 0 664513 195663 664700 194769 524 25  #   \\ botndypi_kastad= 237 botndypi_hift= 277 \\
+STAT 669 3 0 664228 194346 663878 194827 386 18  #   \\ botndypi_kastad= 154 botndypi_hift= 141 \\
+STAT 669 2 0 663517 193996 663870 193526 269 23  #   \\ botndypi_kastad= 225 botndypi_hift= 222 \\
+STAT 669 1 0 664393 193112 664688 193779 376 24  #   \\ botndypi_kastad= 235 botndypi_hift= 220 \\
+PORT 661066 185279 "Siglufjörður" 1 
+WAYP 663000 225940 1 
+WAYP 662975 222760 1 
+WAYP 661966 232842 1 
+WAYP 660795 230409 1 
+WAYP 661366 185359 1 
+WAYP 660501 192476 1 
+WAYP 660934 200733 1 
+WAYP 660501 202938 1 
+WAYP 654127 204535 1 
+WAYP 654567 180760 1 
+WAYP 655162 180912 1 
+WAYP 660004 182318 1 
+WAYP 660949 182318 1 
+WAYP 661258 181216 1 
+WAYP 660128 211385 1 
+WAYP 661304 171514 1 
+WAYP 654013 242877 1 
+WAYP 652968 244133 1 
+WAYP 652913 210537 1 
+WAYP 645667 235329 1 
+WAYP 653122 133096 1 
+WAYP 651917 133465 1 
+WAYP 632048 184139 1 
+WAYP 644653 241156 1 
+WAYP 634583 224736 1 
+WAYP 640764 225002 1 
+WAYP 640731 224090 1 
