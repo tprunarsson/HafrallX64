@@ -13,20 +13,19 @@ current_directory = os.getcwd()
 if current_directory not in sys.path:
     sys.path.append(current_directory)
 (tSHIP,tSTAT,tWAYP,tENDP,tPORT) = (1,2,3,4,5)
-
+here = os.path.dirname(os.path.abspath(__file__))
 # Detect the platform
 if platform.system() == "Windows":
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    print("the directory is:", script_dir)
+    script_dir = here
     os.add_dll_directory(script_dir)
-    # Load the DLL
-    lib = ctypes.WinDLL("lib/utils.dll")
-elif platform.system() == "Darwin":  # For macOS
-    # Load the .dylib file on macOS
-    lib = ctypes.CDLL('lib/utils.dylib')
-else:
-    # Load the .so file on Linux
-    lib = ctypes.CDLL('lib/utils.so')
+    lib_path = os.path.join(script_dir, "lib", "utils.dll")  # or libutils.dll depending on what you built
+    lib = ctypes.WinDLL(lib_path)
+elif platform.system() == "Darwin":  # macOS
+    lib_path = os.path.join(here, "lib", "libutils.dylib")
+    lib = ctypes.CDLL(lib_path)
+else:  # Linux
+    lib_path = os.path.join(here, "lib", "libutils.so")
+    lib = ctypes.CDLL(lib_path)
 
 def arcdist(lat1, lon1, lat2, lon2):
     r = 3437.905   # Earth radius in miles
